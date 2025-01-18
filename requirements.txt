@@ -1,7 +1,6 @@
-io
-google.cloud
-google.cloud.vision_v1
-cv2
+google-cloud-vision
+google-cloud
+opencv-python
 openai
 os
 json
