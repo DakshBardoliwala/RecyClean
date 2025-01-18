@@ -6,8 +6,8 @@ import io
 import tempfile
 import os
 import time
-from gtts import gTTS
-from playsound import playsound
+import openai
+from SpeakText import speak_text
 
 # Hugging Face API details
 API_TOKEN = ""
@@ -17,37 +17,9 @@ headers = {
     "Authorization": f"Bearer {API_TOKEN}"
 }
 
-def speak_text(text):
-    """
-    Convert text to speech using Google TTS
-    """
-    try:
-        # Generate a unique filename
-        temp_dir = tempfile.gettempdir()
-        temp_filename = os.path.join(temp_dir, f'speech_{time.time()}.mp3')
-        
-        # Generate speech
-        tts = gTTS(text=text, lang='en', slow=False)
-        # Save to temporary file
-        tts.save(temp_filename)
-        
-        try:
-            # Play the audio
-            playsound(temp_filename)
-        except Exception as e:
-            print(f"Error playing sound: {str(e)}")
-        finally:
-            # Wait a moment before trying to delete
-            time.sleep(0.1)
-            try:
-                os.remove(temp_filename)
-            except:
-                pass  # If we can't delete now, it'll be cleaned up later
-                
-    except Exception as e:
-        print(f"Error in text-to-speech: {str(e)}")
 
 def expand_caption(caption):
+    return caption
     """
     Expand a single sentence caption into multiple sentences without using NLTK.
     """
@@ -167,6 +139,28 @@ def capture_single_description():
         # Always clean up camera resources
         cap.release()
         cv2.destroyAllWindows()
+
+
+def chatgpt_explain_labels(labels):
+    """Uses ChatGPT to classify a detected object."""
+    if not labels:
+        return "No label detected."
+    prompt = (f"Classify this object, {labels[0]}, as one of the following waste categories. "
+              "Choose the one that fits best, do not assume anything about the context:\n"
+              "Recycling\nOrganic\nTrash\nElectronic\nMiscellaneous\n\n"
+              "Give your response as only one word: the category.")
+    
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "system", "content": "You are a classification system for waste categories."},
+            {"role": "user", "content": prompt}
+        ],
+        max_tokens=100,
+        temperature=0
+    )
+    return response.choices[0].message['content'].strip()
+
 
 def main_loop():
     """
