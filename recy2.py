@@ -8,6 +8,7 @@ import os
 import time
 from gtts import gTTS
 from playsound import playsound
+import openai
 
 # Hugging Face API details
 API_TOKEN = ""
