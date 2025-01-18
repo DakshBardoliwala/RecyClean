@@ -1,5 +1,4 @@
-
-        examples = (
+examples = (
             "Examples:\n"
 "1) Description: 'A #1 plastic water bottle with a recycling symbol.' -> This item is recyclable.\n"
 "   Reasoning: Plastic #1 is commonly accepted in most curbside recycling programs.\n\n"
