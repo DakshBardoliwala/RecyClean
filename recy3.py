@@ -72,207 +72,376 @@ def chatgpt_analysis(caption):
 
         # Expanded examples with more detail
         examples = (
-            "Examples:\n"
-"1) Description: 'A #1 plastic water bottle with a recycling symbol.' -> This item is recyclable.\n"
-"   Reasoning: Plastic #1 is commonly accepted in most curbside recycling programs.\n\n"
-"2) Description: 'A Styrofoam takeout container (#6).' -> This item is not recyclable.\n"
-"   Reasoning: Polystyrene foam is typically not accepted by standard curbside recycling.\n\n"
-"3) Description: 'A piece of plastic wrap of unknown type.' -> I am not sure if this item is recyclable.\n"
-"   Reasoning: Without a clear recycling code, many programs do not accept it.\n\n"
-"4) Description: 'A man holding a laptop (metal and plastic parts).' -> This item is recyclable.\n"
-"   Reasoning: Electronics can be recycled through special e-waste facilities.\n\n"
-"5) Description: 'A mobile phone.' -> This item is recyclable.\n"
-"   Reasoning: Phones are e-waste with recoverable metals and plastics.\n\n"
-"6) Description: 'A greasy cardboard pizza box.' -> I am not sure if this item is recyclable.\n"
-"   Reasoning: Heavily soiled cardboard is often rejected by curbside programs.\n\n"
-"7) Description: 'A plastic bottle without a label or number marking.' -> I am not sure if this item is recyclable.\n"
-"   Reasoning: Unmarked plastic is questionable for many facilities.\n\n"
-"8) Description: 'An empty aluminum soda can.' -> This item is recyclable.\n"
-"   Reasoning: Aluminum is widely accepted in recycling.\n\n"
-"9) Description: 'A glass jar with a metal lid.' -> This item is recyclable.\n"
-"   Reasoning: Both glass and metal lids are commonly accepted, though they may need to be separated.\n\n"
-"10) Description: 'A plastic toy (unknown plastic type).' -> I am not sure if this item is recyclable.\n"
-"   Reasoning: Toys often use mixed or unknown plastics not accepted by curbside programs.\n\n"
-"11) Description: 'A hardcover book.' -> I am not sure if this item is recyclable.\n"
-"   Reasoning: Some facilities accept books if covers are removed, others do not.\n\n"
-"12) Description: 'An empty steel soup can.' -> This item is recyclable.\n"
-"   Reasoning: Steel cans are commonly accepted curbside.\n\n"
-"13) Description: 'A bubble mailer made of mixed plastic and paper.' -> I am not sure if this item is recyclable.\n"
-"   Reasoning: Mixed materials can be problematic unless separated.\n\n"
-"14) Description: 'A cardboard shipping box (clean and dry).' -> This item is recyclable.\n"
-"   Reasoning: Clean cardboard is almost universally accepted.\n\n"
-"15) Description: 'A plastic fork labeled #5.' -> I am not sure if this item is recyclable.\n"
-"   Reasoning: #5 plastics are sometimes accepted, but rules vary by location.\n\n"
-"16) Description: 'A #2 HDPE milk jug.' -> This item is recyclable.\n"
-"   Reasoning: Plastic #2 is widely accepted.\n\n"
-"17) Description: 'Plastic straws (no recycling mark).' -> This item is not recyclable.\n"
-"   Reasoning: Most straws are too small or made from mixed plastics, typically not recycled.\n\n"
-"18) Description: 'A wet paper towel.' -> This item is not recyclable.\n"
-"   Reasoning: Wet or soiled paper cannot be recycled.\n\n"
-"19) Description: 'A metal coat hanger.' -> I am not sure if this item is recyclable.\n"
-"   Reasoning: Some facilities accept metal hangers, but many ask for them to be taken to special drop-offs.\n\n"
-"20) Description: 'A shredded stack of office paper.' -> This item is recyclable.\n"
-"   Reasoning: Shredded paper can be recycled in some programs if properly contained.\n\n"
-"21) Description: 'A plastic coffee cup lid labeled #6.' -> This item is not recyclable.\n"
-"   Reasoning: Polystyrene (#6) lids are usually not accepted.\n\n"
-"22) Description: 'Used paper napkins.' -> This item is not recyclable.\n"
-"   Reasoning: Soiled paper fiber is rejected.\n\n"
-"23) Description: 'An empty glass wine bottle.' -> This item is recyclable.\n"
-"   Reasoning: Glass bottles are commonly accepted curbside.\n\n"
-"24) Description: 'A phone charger and cable.' -> This item is recyclable.\n"
-"   Reasoning: Electronic accessories can be taken to e-waste facilities.\n\n"
-"25) Description: 'A plastic grocery bag labeled #4 (LDPE).' -> I am not sure if this item is recyclable.\n"
-"   Reasoning: Some stores offer special drop-offs for bags, but curbside often rejects them.\n\n"
-"26) Description: 'A PET #1 clear clamshell container (for salad).' -> This item is recyclable.\n"
-"   Reasoning: PET #1 is generally accepted if clean.\n\n"
-"27) Description: 'A ceramic coffee mug.' -> This item is not recyclable.\n"
-"   Reasoning: Ceramics are not accepted in standard glass recycling.\n\n"
-"28) Description: 'A plastic laundry detergent jug labeled #2.' -> This item is recyclable.\n"
-"   Reasoning: HDPE #2 jugs are commonly accepted.\n\n"
-"29) Description: 'A single-use plastic ketchup packet.' -> This item is not recyclable.\n"
-"   Reasoning: Small flexible packets are not typically accepted.\n\n"
-"30) Description: 'A tissue box (cardboard with plastic film opening).' -> I am not sure if this item is recyclable.\n"
-"   Reasoning: The cardboard is recyclable, but the plastic film must usually be removed first.\n\n"
-"31) Description: 'A cork from a wine bottle.' -> This item is not recyclable.\n"
-"   Reasoning: Natural cork isn’t commonly accepted in curbside recycling.\n\n"
-"32) Description: 'A #5 plastic yogurt cup.' -> I am not sure if this item is recyclable.\n"
-"   Reasoning: Some communities accept #5 plastic, others do not.\n\n"
-"33) Description: 'A partially filled paint can.' -> This item is not recyclable.\n"
-"   Reasoning: Hazardous or chemical residues generally require special disposal.\n\n"
-"34) Description: 'A rinsed-out tin can with a label.' -> This item is recyclable.\n"
-"   Reasoning: Tin or steel cans are widely accepted, labels can typically be removed or left on.\n\n"
-"35) Description: 'A broken Pyrex baking dish.' -> This item is not recyclable.\n"
-"   Reasoning: Heat-treated glass (Pyrex) is not compatible with standard glass recycling.\n\n"
-"36) Description: 'A #7 mixed plastic container.' -> I am not sure if this item is recyclable.\n"
-"   Reasoning: #7 often indicates a mix of plastics that some centers do not accept.\n\n"
-"37) Description: 'A cotton t-shirt.' -> I am not sure if this item is recyclable.\n"
-"   Reasoning: Textiles are not typically accepted curbside, but can be recycled through textile recycling programs.\n\n"
-"38) Description: 'A cardboard egg carton.' -> This item is recyclable.\n"
-"   Reasoning: Cardboard or paper egg cartons are usually accepted if clean.\n\n"
-"39) Description: 'A used tea bag (paper with tea leaves).' -> This item is not recyclable.\n"
-"   Reasoning: Organic material contamination and staples can be problematic.\n\n"
-"40) Description: 'Empty aerosol can (non-hazardous).' -> This item is recyclable.\n"
-"   Reasoning: Some facilities accept empty aerosol cans if fully depressurized.\n\n"
-"41) Description: 'Used aluminum foil covered in food residue.' -> I am not sure if this item is recyclable.\n"
-"   Reasoning: Foil must be clean to be accepted; heavily soiled foil is typically rejected.\n\n"
-"42) Description: 'A broken mirror.' -> This item is not recyclable.\n"
-"   Reasoning: Mirrors are treated glass and not accepted with standard glass recycling.\n\n"
-"43) Description: 'A plastic takeout container labeled #5.' -> I am not sure if this item is recyclable.\n"
-"   Reasoning: Some places accept #5 clamshells, others do not.\n\n"
-"44) Description: 'A cereal box (paperboard) with inner plastic bag.' -> This item is recyclable.\n"
-"   Reasoning: The box is recyclable; the liner is not, unless taken to specific drop-offs.\n\n"
-"45) Description: 'A plastic sauce bottle labeled #1.' -> This item is recyclable.\n"
-"   Reasoning: Clean PET #1 plastic is widely accepted.\n\n"
-"46) Description: 'A plastic toy with metal screws inside.' -> I am not sure if this item is recyclable.\n"
-"   Reasoning: Mixed materials require special handling.\n\n"
-"47) Description: 'A cast iron pan.' -> I am not sure if this item is recyclable.\n"
-"   Reasoning: Metal is recyclable, but curbside pickup may not accept heavy cookware.\n\n"
-"48) Description: 'A toothpaste tube (mixed materials).' -> This item is not recyclable.\n"
-"   Reasoning: Most toothpaste tubes use multi-layer plastics or metal.\n\n"
-"49) Description: 'A cardboard coffee cup sleeve (clean).' -> This item is recyclable.\n"
-"   Reasoning: Plain cardboard is generally accepted.\n\n"
-"50) Description: 'A small LED light bulb.' -> I am not sure if this item is recyclable.\n"
-"   Reasoning: Some e-waste facilities accept them, but not regular curbside.\n\n"
-"51) Description: 'A porcelain plate.' -> This item is not recyclable.\n"
-"   Reasoning: Ceramics are generally not accepted curbside.\n\n"
-"52) Description: 'Paper envelopes with plastic windows.' -> This item is recyclable.\n"
-"   Reasoning: Many recycling systems accept envelopes with small plastic windows.\n\n"
-"53) Description: 'A used disposable diaper.' -> This item is not recyclable.\n"
-"   Reasoning: Diapers contain waste and mixed materials, never accepted.\n\n"
-"54) Description: 'A big cardboard moving box (flattened).' -> This item is recyclable.\n"
-"   Reasoning: Clean, flattened cardboard is standard in recycling.\n\n"
-"55) Description: 'A chip bag made of foil-lined plastic.' -> This item is not recyclable.\n"
-"   Reasoning: Mixed materials are difficult to separate and typically not accepted.\n\n"
-"56) Description: 'A used plastic cup labeled #1 (clean).' -> This item is recyclable.\n"
-"   Reasoning: Clean PET cups are generally accepted.\n\n"
-"57) Description: 'A broken PVC pipe (#3 plastic).' -> This item is not recyclable.\n"
-"   Reasoning: PVC is rarely accepted in curbside recycling.\n\n"
-"58) Description: 'A piece of bubble wrap.' -> I am not sure if this item is recyclable.\n"
-"   Reasoning: Some drop-off locations accept bubble wrap, but curbside often rejects it.\n\n"
-"59) Description: 'An empty clear glass pasta sauce jar.' -> This item is recyclable.\n"
-"   Reasoning: Clear glass jars are generally accepted.\n\n"
-"60) Description: 'A roll of used fax paper (thermal paper).' -> I am not sure if this item is recyclable.\n"
-"   Reasoning: Thermal paper may contain chemicals that some facilities do not accept.\n\n"
-"61) Description: 'A shredded plastic bag used as packing material.' -> This item is not recyclable.\n"
-"   Reasoning: Plastic film and shredded pieces can jam sorting machines.\n\n"
-"62) Description: 'A plastic laundry basket with no recycling label.' -> I am not sure if this item is recyclable.\n"
-"   Reasoning: Large plastic items without labels are often not accepted.\n\n"
-"63) Description: 'A metal soda bottle cap.' -> I am not sure if this item is recyclable.\n"
-"   Reasoning: Tiny metal caps can be recycled in some programs if placed inside larger metal cans.\n\n"
-"64) Description: 'A completely empty and clean paint can (metal).' -> This item is recyclable.\n"
-"   Reasoning: If thoroughly cleaned, some facilities accept metal paint cans.\n\n"
-"65) Description: 'A polypropylene (#5) medicine bottle (empty).' -> I am not sure if this item is recyclable.\n"
-"   Reasoning: Depends on local rules; some accept #5 containers, others do not.\n\n"
-"66) Description: 'A foam egg carton labeled #6.' -> This item is not recyclable.\n"
-"   Reasoning: Styrofoam (#6) is typically rejected.\n\n"
-"67) Description: 'A used bandage with adhesive and gauze.' -> This item is not recyclable.\n"
-"   Reasoning: Medical waste or soiled materials are not accepted.\n\n"
-"68) Description: 'A cardboard cereal box with minor grease spots.' -> This item is recyclable.\n"
-"   Reasoning: Light grease typically won’t disqualify dry cardboard.\n\n"
-"69) Description: 'A photograph printed on glossy photo paper.' -> I am not sure if this item is recyclable.\n"
-"   Reasoning: Photo paper may have chemical coatings that are not recyclable.\n\n"
-"70) Description: 'A large plastic tote labeled #2 HDPE.' -> This item is recyclable.\n"
-"   Reasoning: If it fits, many programs accept rigid #2 plastics, but size rules may vary.\n\n"
-"71) Description: 'A combination shampoo/conditioner bottle labeled #2 and #5.' -> I am not sure if this item is recyclable.\n"
-"   Reasoning: Mixed plastic components can complicate recycling.\n\n"
-"72) Description: 'An empty juice box with a plastic straw attached.' -> This item is not recyclable.\n"
-"   Reasoning: Juice boxes are often multi-layer cartons, and the straw is plastic.\n\n"
-"73) Description: 'A tin foil pie plate cleaned of food residue.' -> This item is recyclable.\n"
-"   Reasoning: Clean aluminum foil products are often accepted.\n\n"
-"74) Description: 'A foil-like gift wrap paper with glitter.' -> This item is not recyclable.\n"
-"   Reasoning: Glitter and mixed materials make it unsuitable for paper recycling.\n\n"
-"75) Description: 'A nylon bag used to hold fruit (netting).' -> I am not sure if this item is recyclable.\n"
-"   Reasoning: Netting is often not accepted curbside.\n\n"
-"76) Description: 'A polylactic acid (PLA) compostable cup.' -> This item is not recyclable.\n"
-"   Reasoning: Compostable plastics do not break down in traditional recycling.\n\n"
-"77) Description: 'A plastic clamshell labeled #1 (for berries).' -> This item is recyclable.\n"
-"   Reasoning: Many municipalities accept clean #1 containers.\n\n"
-"78) Description: 'A used brown paper lunch bag (slightly stained).' -> I am not sure if this item is recyclable.\n"
-"   Reasoning: If lightly stained, it might still be accepted, but heavily soiled bags are not.\n\n"
-"79) Description: 'A small cardboard jewelry box with a foam insert.' -> I am not sure if this item is recyclable.\n"
-"   Reasoning: The cardboard is recyclable, but the foam insert is not.\n\n"
-"80) Description: 'A used paper cup with a wax lining.' -> This item is not recyclable.\n"
-"   Reasoning: Most waxed or plastic-lined paper cups are not accepted curbside.\n\n"
-"81) Description: 'A broken plastic chair labeled #5.' -> I am not sure if this item is recyclable.\n"
-"   Reasoning: Large rigid plastics may be accepted in some areas, but not all.\n\n"
-"82) Description: 'A single-use coffee pod (plastic + aluminum foil).' -> This item is not recyclable.\n"
-"   Reasoning: Pods are typically mixed materials and difficult to separate.\n\n"
-"83) Description: 'A sealed, unopened can of expired food.' -> This item is not recyclable.\n"
-"   Reasoning: Food liquids and sealed pressurized cans are usually not accepted.\n\n"
-"84) Description: 'A paper-based mailing envelope lined with bubble wrap.' -> I am not sure if this item is recyclable.\n"
-"   Reasoning: Mixed paper and plastic must be separated, which is often difficult.\n\n"
-"85) Description: 'A PET #1 shampoo bottle (rinsed).' -> This item is recyclable.\n"
-"   Reasoning: Clean PET #1 bottles are widely accepted.\n\n"
-"86) Description: 'A PVC pipe labeled #3 used for plumbing.' -> This item is not recyclable.\n"
-"   Reasoning: PVC #3 is rarely accepted in curbside recycling.\n\n"
-"87) Description: 'A stack of newspapers (dry and unsoiled).' -> This item is recyclable.\n"
-"   Reasoning: Clean newspapers are standard in paper recycling.\n\n"
-"88) Description: 'A used plastic straw wrapper with some food stains.' -> This item is not recyclable.\n"
-"   Reasoning: Thin plastic film with food residue is generally rejected.\n\n"
-"89) Description: 'A broken porcelain vase.' -> This item is not recyclable.\n"
-"   Reasoning: Ceramics cannot go with regular glass.\n\n"
-"90) Description: 'A large cardboard tube from gift wrap.' -> This item is recyclable.\n"
-"   Reasoning: Plain cardboard or paper tubes are generally accepted.\n\n"
-"91) Description: 'A snack-size yogurt tube (soft plastic).' -> This item is not recyclable.\n"
-"   Reasoning: Squeezable tubes made of multilayer plastic are typically not accepted.\n\n"
-"92) Description: 'A polypropylene (#5) Tupperware container.' -> I am not sure if this item is recyclable.\n"
-"   Reasoning: Some programs accept #5 containers, others do not.\n\n"
-"93) Description: 'A beverage carton for milk (paper + plastic lining).' -> I am not sure if this item is recyclable.\n"
-"   Reasoning: Many facilities do accept these cartons, but rules vary.\n\n"
-"94) Description: 'A used coffee filter with grounds.' -> This item is not recyclable.\n"
-"   Reasoning: Compostable, but not acceptable for curbside recycling.\n\n"
-"95) Description: 'A plastic container labeled #4 LDPE for bread.' -> I am not sure if this item is recyclable.\n"
-"   Reasoning: Some curbside programs do not accept #4 containers or films.\n\n"
-"96) Description: 'An old DVD disc.' -> This item is not recyclable.\n"
-"   Reasoning: Discs are mixed materials (polycarbonate, metals) and require special e-waste handling.\n\n"
-"97) Description: 'A clean, empty peanut butter jar (#1 plastic).' -> This item is recyclable.\n"
-"   Reasoning: Plastic #1 is commonly accepted if thoroughly rinsed.\n\n"
-"98) Description: 'A used paper plate with heavy food residue.' -> This item is not recyclable.\n"
-"   Reasoning: Heavily soiled paper is not accepted.\n\n"
-"99) Description: 'A latex glove.' -> This item is not recyclable.\n"
-"   Reasoning: Gloves are not accepted in typical curbside recycling.\n\n"
-"100) Description: 'A large aluminum tray (clean).' -> This item is recyclable.\n"
-"    Reasoning: Clean aluminum trays are accepted in many curbside programs.\n\n"
+             """
+            RECYCLABLE (30 examples)
+Description: 'An empty aluminum soda can.' -> This item is recyclable.
+Reasoning: Aluminum is commonly accepted in most recycling programs.
+
+Description: 'A clean #1 plastic water bottle.' -> This item is recyclable.
+Reasoning: Plastic #1 (PET) is widely accepted curbside when rinsed.
+
+Description: 'A flattened cardboard box.' -> This item is recyclable.
+Reasoning: Clean cardboard is accepted in almost all paper/cardboard recycling.
+
+Description: 'A rinsed-out glass pasta sauce jar.' -> This item is recyclable.
+Reasoning: Most glass jars are curbside-recyclable if clean.
+
+Description: 'A clean steel soup can.' -> This item is recyclable.
+Reasoning: Steel or tin cans are generally accepted in metal recycling streams.
+
+Description: 'A #2 HDPE milk jug.' -> This item is recyclable.
+Reasoning: HDPE is one of the most commonly accepted plastic types.
+
+Description: 'A newspaper.' -> This item is recyclable.
+Reasoning: Newspapers are standard paper recyclables.
+
+Description: 'A magazine without plastic wrapping.' -> This item is recyclable.
+Reasoning: Glossy magazines (paper) are usually accepted if free of plastic sleeves.
+
+Description: 'A cardboard egg carton.' -> This item is recyclable.
+Reasoning: Most paper-based egg cartons are accepted if clean.
+
+Description: 'A clean aluminum foil sheet (balled up).' -> This item is recyclable.
+Reasoning: Aluminum foil can be recycled if free of food residue.
+
+Description: 'A roll of clean, empty paper towel tubes.' -> This item is recyclable.
+Reasoning: Cardboard tubes are typically accepted with paper products.
+
+Description: 'A clean plastic soda bottle labeled #1.' -> This item is recyclable.
+Reasoning: Clear PET #1 plastic is widely recyclable.
+
+Description: 'A cardboard coffee cup sleeve.' -> This item is recyclable.
+Reasoning: Plain cardboard or paper sleeves are generally accepted.
+
+Description: 'A newspaper folded neatly.' -> This item is recyclable.
+Reasoning: Newspapers are standard recyclable paper items.
+
+Description: 'An empty cardboard shoe box.' -> This item is recyclable.
+Reasoning: Cardboard of any kind is normally accepted if clean.
+
+Description: 'A glass beverage bottle (clear).' -> This item is recyclable.
+Reasoning: Clean, unbroken glass bottles are typically accepted.
+
+Description: 'A paper grocery bag (no plastic liner).' -> This item is recyclable.
+Reasoning: Pure paper bags are generally accepted in paper/cardboard recycling.
+
+Description: 'A clean plastic takeout container labeled #2.' -> This item is recyclable.
+Reasoning: Rigid HDPE #2 containers are accepted by many programs.
+
+Description: 'A cardboard shipping box (clean and dry).' -> This item is recyclable.
+Reasoning: Clean cardboard is almost universally accepted.
+
+Description: 'A stack of used, but clean, printer paper.' -> This item is recyclable.
+Reasoning: Dry, unsoiled paper is acceptable for recycling.
+
+Description: 'A plastic jar labeled #1 PET.' -> This item is recyclable.
+Reasoning: PET plastic is among the most accepted types.
+
+Description: 'An empty cardboard gift box (no decorations).' -> This item is recyclable.
+Reasoning: Plain cardboard is accepted, but remove bows/ribbons first.
+
+Description: 'Clean glass candle holders (no wax).' -> This item is recyclable.
+Reasoning: If thoroughly cleaned, glass is generally recyclable.
+
+Description: 'Clean aluminum baking trays.' -> This item is recyclable.
+Reasoning: Aluminum trays are accepted if free of food residue.
+
+Description: 'A plastic lid labeled #2 (from a container).' -> This item is recyclable.
+Reasoning: If your facility accepts #2 lids, they can go with plastics.
+
+Description: 'A #5 plastic tub (if locally accepted).' -> This item is recyclable.
+Reasoning: Some areas do accept polypropylene containers.
+
+Description: 'A metal food can with a pull-tab top.' -> This item is recyclable.
+Reasoning: Steel or tin-based cans remain recyclable despite pull-tab lids.
+
+Description: 'A soda bottle labeled #1 with cap removed.' -> This item is recyclable.
+Reasoning: PET #1 bottles are widely recyclable; caps may be recycled separately if #2 or #5.
+
+Description: 'A clean pie tin labeled as aluminum.' -> This item is recyclable.
+Reasoning: Aluminum baking tins are acceptable if free of residue.
+
+Description: 'A #2 plastic detergent bottle, thoroughly rinsed.' -> This item is recyclable.
+Reasoning: HDPE #2 bottles are among the most universally accepted plastics.
+
+ORGANIC (30 examples)
+Description: 'A banana peel.' -> This item is organic.
+Reasoning: Fruit peels break down naturally and are compostable.
+
+Description: 'Coffee grounds.' -> This item is organic.
+Reasoning: Used coffee grounds are biodegradable and suitable for compost.
+
+Description: 'Apple cores.' -> This item is organic.
+Reasoning: Core and seeds decompose quickly.
+
+Description: 'Orange rinds.' -> This item is organic.
+Reasoning: Citrus peels are compostable, though they may take longer to break down.
+
+Description: 'Vegetable scraps (carrot tops, celery ends).' -> This item is organic.
+Reasoning: These kitchen scraps are ideal for composting.
+
+Description: 'Eggshells.' -> This item is organic.
+Reasoning: Eggshells break down, adding calcium to compost.
+
+Description: 'Tea bags (paper-based, no staples).' -> This item is organic.
+Reasoning: Paper tea bags and leaves decompose naturally.
+
+Description: 'Potato peels.' -> This item is organic.
+Reasoning: Starchy vegetable scraps decompose well in compost.
+
+Description: 'Leftover salad greens (unseasoned).' -> This item is organic.
+Reasoning: Plain vegetable matter is compostable.
+
+Description: 'Bread crust (without mold treatments).' -> This item is organic.
+Reasoning: Stale bread is compostable, though it can attract pests if not buried.
+
+Description: 'Corn cobs and husks.' -> This item is organic.
+Reasoning: They decompose in compost, though cobs take longer.
+
+Description: 'Leafy yard trimmings (grass clippings, leaves).' -> This item is organic.
+Reasoning: These are prime materials for compost piles.
+
+Description: 'Paper napkins (lightly used, no chemical residue).' -> This item is organic.
+Reasoning: Slightly soiled paper with food residue is compostable.
+
+Description: 'Paper plates labeled “compostable” (food-soiled).' -> This item is organic.
+Reasoning: Compostable paper products decompose if they are specifically made for compost.
+
+Description: 'Paper straws.' -> This item is organic.
+Reasoning: Paper straws degrade in compost, unlike plastic ones.
+
+Description: 'Wooden toothpicks.' -> This item is organic.
+Reasoning: Small pieces of untreated wood break down in compost.
+
+Description: 'Mushroom stems and scraps.' -> This item is organic.
+Reasoning: Fungi decompose quickly in compost.
+
+Description: 'Spoiled fruits (overripe bananas, apples, etc.).' -> This item is organic.
+Reasoning: Spoiled produce is fully biodegradable.
+
+Description: 'Herb stems (basil, cilantro).' -> This item is organic.
+Reasoning: Herb stems are plant matter suitable for compost.
+
+Description: 'Melon rinds (watermelon, cantaloupe).' -> This item is organic.
+Reasoning: Melon rinds break down over time in a compost pile.
+
+Description: 'Peanut shells (unseasoned).' -> This item is organic.
+Reasoning: Shells decompose, adding carbon to the compost mix.
+
+Description: 'Avocado skins and pits (pits decompose slowly).' -> This item is organic.
+Reasoning: They will eventually break down, though pits may take longer.
+
+Description: 'Paper tissues (used for wiping food spills).' -> This item is organic.
+Reasoning: Soiled paper is biodegradable, often composted.
+
+Description: 'Nut shells (e.g., pistachio, walnut), unflavored.' -> This item is organic.
+Reasoning: Natural shells are compostable though they can be slow to break down.
+
+Description: 'Pineapple tops and skins.' -> This item is organic.
+Reasoning: Fruit scraps decompose, though pineapple cores are fibrous.
+
+Description: 'Wilted lettuce leaves.' -> This item is organic.
+Reasoning: Leafy greens are ideal “green” compost material.
+
+Description: 'Flower stems from pruning.' -> This item is organic.
+Reasoning: Plant-based trimmings are compostable.
+
+Description: 'Paper tablecloth (unwaxed, food-stained).' -> This item is organic.
+Reasoning: If it’s purely paper with no plastic lining, it can decompose.
+
+Description: 'Cooked oatmeal leftovers (no added sugars).' -> This item is organic.
+Reasoning: Oatmeal is biodegradable if not mixed with non-compostable additives.
+
+Description: 'Any fruit or vegetable scraps (general kitchen waste).' -> This item is organic.
+Reasoning: All produce leftovers are biodegradable in compost conditions.
+
+(Continuing in next message due to length.)
+
+ELECTRONICS (30 examples)
+Description: 'A smartphone (Android or iPhone).' -> This item is electronics.
+Reasoning: Phones contain circuit boards, metals, and batteries requiring e-waste recycling.
+
+Description: 'A laptop (Windows or Mac).' -> This item is electronics.
+Reasoning: Laptops house rechargeable batteries and circuit boards, categorized as e-waste.
+
+Description: 'A desktop computer tower.' -> This item is electronics.
+Reasoning: Contains complex circuitry and components that need proper e-waste handling.
+
+Description: 'A tablet (touchscreen device).' -> This item is electronics.
+Reasoning: Tablets contain lithium batteries and electronic components.
+
+Description: 'A standalone computer monitor (LCD or LED).' -> This item is electronics.
+Reasoning: Monitors have circuit boards and sometimes hazardous materials like mercury in older models.
+
+Description: 'A smartwatch or fitness tracker.' -> This item is electronics.
+Reasoning: Wearables contain small batteries and microelectronics.
+
+Description: 'A digital camera (DSLR or point-and-shoot).' -> This item is electronics.
+Reasoning: Cameras have sensors, circuit boards, and batteries.
+
+Description: 'A DVD or Blu-ray player.' -> This item is electronics.
+Reasoning: Optical disc players have circuit boards and mechanical parts.
+
+Description: 'A streaming media device (like a Roku or Apple TV).' -> This item is electronics.
+Reasoning: Contains circuit boards and sometimes a small power supply.
+
+Description: 'A wireless router or modem.' -> This item is electronics.
+Reasoning: Routers have circuit boards, antennas, and plastic housing.
+
+Description: 'A gaming console (e.g., PlayStation, Xbox).' -> This item is electronics.
+Reasoning: Consoles contain complex circuit boards and power units.
+
+Description: 'A gaming controller or joystick.' -> This item is electronics.
+Reasoning: Input devices for consoles/computers with internal electronics.
+
+Description: 'A set of computer speakers.' -> This item is electronics.
+Reasoning: Speakers contain wiring, magnets, and often a small amplifier board.
+
+Description: 'Wireless headphones or earbuds.' -> This item is electronics.
+Reasoning: Contain rechargeable batteries and wireless circuitry.
+
+Description: 'A VR headset.' -> This item is electronics.
+Reasoning: Virtual Reality devices have advanced sensors and displays.
+
+Description: 'A digital thermostat (home HVAC controller).' -> This item is electronics.
+Reasoning: Thermostats have LCD displays, sensors, and circuit boards.
+
+Description: 'A smartwatch charging dock.' -> This item is electronics.
+Reasoning: Docking stations contain electronic charging circuitry.
+
+Description: 'A power supply unit (PSU) for a desktop PC.' -> This item is electronics.
+Reasoning: Converts AC to DC power and contains various electronic parts.
+
+Description: 'An external hard drive (HDD or SSD).' -> This item is electronics.
+Reasoning: Storage devices contain circuit boards and data platters or chips.
+
+Description: 'A portable USB flash drive.' -> This item is electronics.
+Reasoning: Flash memory devices have circuit boards with NAND chips.
+
+Description: 'A digital photo frame.' -> This item is electronics.
+Reasoning: Contains a small LCD screen and memory components.
+
+Description: 'A projector (home theater or business).' -> This item is electronics.
+Reasoning: Projectors use lamps or LEDs, plus circuit boards for video processing.
+
+Description: 'A portable power bank.' -> This item is electronics.
+Reasoning: Power banks contain lithium-ion batteries and charging circuits.
+
+Description: 'A USB wall plug adapter.' -> This item is electronics.
+Reasoning: Adapters have transformers or circuit boards to regulate power output.
+
+Description: 'A drone (consumer-grade, with camera).' -> This item is electronics.
+Reasoning: Drones have batteries, sensors, motors, and a flight controller board.
+
+Description: 'A smartwatch or fitness tracker.' -> This item is electronics.
+Reasoning: Wearables contain rechargeable batteries and sensors.
+
+Description: 'A digital thermometer (medical or home use).' -> This item is electronics.
+Reasoning: Has an LCD display and temperature sensor circuitry.
+
+Description: 'A baby monitor set.' -> This item is electronics.
+Reasoning: Audio/video transmitters and receivers contain circuit boards.
+
+Description: 'A robotic vacuum cleaner.' -> This item is electronics.
+Reasoning: Uses sensors, motors, and CPUs for navigation.
+
+Description: 'A smart light bulb.' -> This item is electronics.
+Reasoning: Contains LED drivers and wireless connectivity modules.
+
+MISCELLANEOUS (30 examples)
+Description: 'A human being standing in a room.' -> This item is miscellaneous.
+Reasoning: Humans are not typically categorized under recycling, organic waste, or electronics.
+
+Description: 'A plush teddy bear.' -> This item is miscellaneous.
+Reasoning: Mixed materials (fabric, stuffing) do not fall neatly under recycling or electronics.
+
+Description: 'A porcelain figurine.' -> This item is miscellaneous.
+Reasoning: Porcelain is not recyclable curbside; it’s not organic or electronic.
+
+Description: 'A baseball hat.' -> This item is miscellaneous.
+Reasoning: Mixed fabrics and plastic brims are not standard recycling or compost.
+
+Description: 'A backpack with zippers.' -> This item is miscellaneous.
+Reasoning: Mixed textiles, plastic, and metal zippers don’t fit a single category.
+
+Description: 'A rubber band ball (multiple rubber bands).' -> This item is miscellaneous.
+Reasoning: Rubber is not typically recycled curbside, nor is it organic or electronic.
+
+Description: 'A vinyl record (music LP).' -> This item is miscellaneous.
+Reasoning: Vinyl (PVC) is rarely recycled, not organic, and not electronic.
+
+Description: 'A synthetic wig.' -> This item is miscellaneous.
+Reasoning: Composed of synthetic fibers not typically compostable or recyclable.
+
+Description: 'A skateboard deck with grip tape.' -> This item is miscellaneous.
+Reasoning: Mixed materials (wood, adhesives, metal) complicate recycling.
+
+Description: 'A trophy with a metal plate on a plastic base.' -> This item is miscellaneous.
+Reasoning: Multiple materials are fused, making it hard to separate or recycle.
+
+Description: 'A decorative snow globe with liquid and glitter.' -> This item is miscellaneous.
+Reasoning: Glass, water, glitter, and plastic figurines are inseparable.
+
+Description: 'A faux leather wallet.' -> This item is miscellaneous.
+Reasoning: Synthetic leather isn’t recyclable or compostable.
+
+Description: 'A wreath made of artificial plastic greenery.' -> This item is miscellaneous.
+Reasoning: Plastic greenery is not compostable nor standard recycling.
+
+Description: 'A large vinyl banner from an event.' -> This item is miscellaneous.
+Reasoning: Vinyl banners are typically not curbside-recyclable.
+
+Description: 'A car seat (child safety seat).' -> This item is miscellaneous.
+Reasoning: Multiple materials, often need specialized disposal programs.
+
+Description: 'A rubber garden hose.' -> This item is miscellaneous.
+Reasoning: Hoses are not accepted in recycling facilities and are not organic or electronic.
+
+Description: 'A decorative candle made of multiple layers of wax and dyes.' -> This item is miscellaneous.
+Reasoning: Wax and dyes do not fit in recycling or compost.
+
+Description: 'A synthetic foam mattress topper.' -> This item is miscellaneous.
+Reasoning: Foam is not readily recyclable or compostable.
+
+Description: 'A bicycle helmet (polystyrene foam + plastic shell).' -> This item is miscellaneous.
+Reasoning: Safety helmets are made of layered composites, not standard recyclables.
+
+Description: 'A plush car seat cover.' -> This item is miscellaneous.
+Reasoning: Fabric, foam, and sometimes plastics are combined.
+
+Description: 'A broken porcelain vase.' -> This item is miscellaneous.
+Reasoning: Ceramics cannot go with regular glass.
+
+Description: 'A rubber dishwashing glove.' -> This item is miscellaneous.
+Reasoning: Latex or rubber gloves are not standard recycling or compost.
+
+Description: 'A vinyl shower curtain liner.' -> This item is miscellaneous.
+Reasoning: PVC-based materials are not recycled curbside or compostable.
+
+Description: 'A throw rug (polyester blend).' -> This item is miscellaneous.
+Reasoning: Textiles with synthetic blends require special textile recycling.
+
+Description: 'A cat scratching post with carpet and cardboard inserts.' -> This item is miscellaneous.
+Reasoning: Combination of fabric, cardboard, glue, and wood—difficult to separate.
+
+Description: 'A foam pool noodle.' -> This item is miscellaneous.
+Reasoning: Pool noodles are often made from polyethylene foam, not widely recycled.
+
+Description: 'A stuffed animal pet toy (fabric and squeaker).' -> This item is miscellaneous.
+Reasoning: Mixed materials with possible plastic squeaker inside.
+
+Description: 'A decorative fish tank ornament (plastic, resin).' -> This item is miscellaneous.
+Reasoning: Unlabeled plastic/resin is not standard recycling or compost.
+
+Description: 'A personal keepsake box with metal hinges and velvet lining.' -> This item is miscellaneous.
+Reasoning: Multiple materials combined, not suitable for recycling or compost.
+
+Description: 'A foam seat cushion (polyurethane foam).' -> This item is miscellaneous.
+Reasoning: Polyurethane foam is not typically recycled or composted.
+
+
+"""
+
 
         )
 
