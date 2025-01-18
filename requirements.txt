@@ -1,0 +1,7 @@
+io
+google.cloud
+google.cloud.vision_v1
+cv2
+openai
+os
+json
