@@ -7,6 +7,7 @@ import tempfile
 import os
 import time
 import openai
+from SpeakText import speak_text
 
 # Hugging Face API details
 API_TOKEN = ""
