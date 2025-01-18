@@ -37,7 +37,16 @@ def speak_text(text):
         
         try:
             # Play the audio
-            playsound(temp_filename)
+            print('playing sound using native player')
+            try:
+                os.system("afplay " + temp_filename)
+            except:
+                pass
+            time.sleep(0.5)
+            try:
+                playsound(temp_filename)
+            except:
+                pass
         except Exception as e:
             print(f"Error playing sound: {str(e)}")
         finally:

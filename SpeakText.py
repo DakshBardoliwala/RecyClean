@@ -27,6 +27,7 @@ def speak_text(text):
                 os.system("afplay " + temp_filename)
             except:
                 pass
+            time.sleep(0.5)
             try:
                 playsound(temp_filename)
             except:
