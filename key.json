@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "plated-complex-448223-q3",
+  "private_key_id": "a9bd2788d9bb1f14635d193291a490457ea6f23c",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDBxWWiDmK+Z6YP\nyWMl5YLTVzUAmDu4FGFKJUJ/KjVoEDVVyrRW20C4RoVqKiwoWyPWGghFTjIaFf6F\nh69S4N4XSJ625qcnKCeRRLmbIczAsMXMBXmeaW93uvousk58ySfN/0X7/nGaaG53\nn+WbuInGL2oq2LT1ovZZz8sX8lP53n/zrHMFpOaUvAI3pG4UirCJJmAlOno4WYwQ\n1k/2z0e57fDAqbfPh/Wa5ShGe9NCQKlTH7vJNIfQwW0uHKom7z+RgkQApUAZXihR\nvJgWjmL3H0dk1z+rnfTI0666HqEMVuVyqz+IALj15ghD+6s/ly2udS2VwpbvQgSN\nB2+yDngNAgMBAAECggEAMhzP9QJNbTq3CrwlhSZ/GBMkpPu57hhvNNLACM0stLYE\nZSSgURow+bdbR6KSevlfIj7nRq07bd2kTnpR0FhRd6oTSfAK6KiM2xfv/HvYTTkq\nXmJIGrzf1BIqI6t/euw2/CJ5wfsC/FDnyM40fnpSP0wB5ATZf/FeTsnbl1zXdPYv\nK1FE3wI92haa16FztJOrfp8Ou30D3blu0yzBQFaJGwavSZxrrgV8nBvjPaElmjp2\nYWaWB4IcXgMxXQXJ/Q53Th2E6NU6oGc0yKnPAxl/MvbXZNOoxOADoZ3hb3OapfGe\n3YOQISpbG43C8FtXNHht3Lk58gxMqFIBInmOWzBYbQKBgQD5C4hMWf7sGghV0YTm\ntvldFCUBnxCftr+TV7ba+L5cB3UDNSKXm0P9+d6ckHF1c2Yl+9dr8oLRQSZa+U9c\nUVvE4mnzgc7Mz0nYbNLOINAewHpPlrsoUQqIC1Uz8UZoxBaltqa96XvF9N/NFpwO\n9OS/BgQbt0HMaA67ElLKEHzCZwKBgQDHLrN8iIePkTcYdyf7ZSESLC4Sd2z4kUKK\nYNSYLwWV/ODmaVJFpADdfWcKcSzFKPLhximVZEsY9mlAgyUS8hIbWl0JsnJJsrkr\nwIDZq2xWTR5mW3fyEZiRUBooPEUS6AS5+F4E0V4cxK9vc2wX2LJOcESfkm9ZrP75\newcK6ICxawKBgQDoO8nQsQdXsXreU++jmTJ1iohrt6Gv3aFNy7iW/ue8N7P01sK4\nLzA7EJt20fcLOB4kA3FBlzZH3YHfyaYohzGVKjD0wrJOKGpLKEd3sf+A/anQt9U0\n5kV00WSVeENZBKm9w9I/PA+QbCWaQKAsDk+Ulg6UrdHsw4ghCBgtlyxPtwKBgFO1\nrds9qfNNbWFL2rLN2qs/hBFgvZxtuBBeB5r50BgsEfzj8J6yAWcUp/R8gftObV0z\nohBV+TXBgZSKSU+ACtoSDR3hMCUHBsl7euuAHuTaPld4Q52phXw0tPmJ8uGyPyJF\nXoYZ07q1cqGdWaVf/ff3OO/zY/bFPNduvBP6iPOHAoGBAK4L+J0EXU3S/r1GCoaL\n1oH+EzDok673QGwphyxDyNZ9rGnHUBHX1gaClUGXKIhVChcW6o6B/IsScDwyzIuZ\ngQ1mWV8EBCxGWiPk+dyUpFbboBm8kmkwa5cLTPtbAiVcV+rPgTLzGedkFXiZ8Ai+\nBqh5GVmg7NFRY9U6ZdevCYSF\n-----END PRIVATE KEY-----\n",
+  "client_email": "recyclean@plated-complex-448223-q3.iam.gserviceaccount.com",
+  "client_id": "100926654127229187202",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/recyclean%40plated-complex-448223-q3.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
