@@ -48,6 +48,7 @@ def speak_text(text):
         print(f"Error in text-to-speech: {str(e)}")
 
 def expand_caption(caption):
+    return caption
     """
     Expand a single sentence caption into multiple sentences without using NLTK.
     """
@@ -167,6 +168,28 @@ def capture_single_description():
         # Always clean up camera resources
         cap.release()
         cv2.destroyAllWindows()
+
+
+def chatgpt_explain_labels(labels):
+    """Uses ChatGPT to classify a detected object."""
+    if not labels:
+        return "No label detected."
+    prompt = (f"Classify this object, {labels[0]}, as one of the following waste categories. "
+              "Choose the one that fits best, do not assume anything about the context:\n"
+              "Recycling\nOrganic\nTrash\nElectronic\nMiscellaneous\n\n"
+              "Give your response as only one word: the category.")
+    
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "system", "content": "You are a classification system for waste categories."},
+            {"role": "user", "content": prompt}
+        ],
+        max_tokens=100,
+        temperature=0
+    )
+    return response.choices[0].message['content'].strip()
+
 
 def main_loop():
     """
