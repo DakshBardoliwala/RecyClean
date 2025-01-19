@@ -10,7 +10,7 @@ vision_client = vision.ImageAnnotatorClient.from_service_account_json('key.json'
 with open('config.json') as f:
     config = json.load(f)
 
-openai_api_key = config["OPENAI_API_KEY"]
+openai.api_key = config["OPENAI_API_KEY"]
 
 def detect_labels_from_frame(frame):
     """Detects labels using Google Vision API from an OpenCV frame."""
@@ -36,7 +36,7 @@ def chatgpt_explain_labels(labels):
             {"role": "system", "content": "You are a classification system for waste categories."},
             {"role": "user", "content": prompt}
         ],
-        max_tokens=100,
+        max_tokens=200,
         temperature=0
     )
     return response.choices[0].message['content'].strip()
