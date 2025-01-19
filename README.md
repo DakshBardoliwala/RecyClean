@@ -31,6 +31,8 @@ RecyClean integrates several technologies to deliver an intuitive and functional
 2. **Real-Time Performance:** Ensuring low latency between detection, classification, and feedback.
 3. **Audio Playback:** Cross-platform audio playback had compatibility challenges, which required fallback strategies.
 4. **Error Handling:** Managing API errors and temporary file cleanup robustly.
+5. **Rate Limits:** Handling rate limit errors from the OpenAI API effectively by implementing request throttling and optimizing API calls.
+6. **API Selection:** Opted for the Google Cloud Vision API over Hugging Face’s Salesforce/blip-image-captioning-base API due to its higher accuracy and better object classification capabilities.
 
 ---
 
