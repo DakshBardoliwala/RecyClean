@@ -30,7 +30,7 @@ def chatgpt_explain_labels(labels):
               "Recycling\nOrganic\nTrash\nElectronic\nMiscellaneous\n\n"
               "Give your response as only one word: the category.")
     
-    response = openai.ChatCompletion.create(
+    response = openai.Completion.create(
         model="gpt-3.5-turbo",
         messages=[
             {"role": "system", "content": "You are a classification system for waste categories."},
