@@ -79,7 +79,7 @@ RecyClean integrates several technologies to deliver an intuitive and functional
 ### Running the Project
 1. Run the Python script:
    ```bash
-   python recyclean.py
+   python secondary.py
    ```
 2. **Controls:**
    - Press **'d'** to detect and classify objects from the video stream.
