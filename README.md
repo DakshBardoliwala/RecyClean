@@ -2,7 +2,7 @@
 # RecyClean: Real-Time Waste Classification
 
 ## 🌱 **Inspiration**
-The global waste management crisis inspired us to create RecyClean. Every day, vast amounts of waste end up in the wrong bins due to a lack of awareness and guidance, making recycling inefficient and harming the environment. RecyClean aims to empower users to make eco-friendly waste disposal decisions with the help of AI-driven real-time waste classification.
+The global waste management crisis inspired us to create RecyClean. Navigating the complexities of recycling on campus can be challenging for students juggling academics, social life, and responsibilities. Every day, waste ends up in the wrong bins due to a lack of clear guidance, making recycling inefficient and harming the environment. RecyClean simplifies sustainable living by using AI-driven real-time waste classification to provide instant, accurate disposal instructions. By making eco-friendly choices quick and effortless, RecyClean helps students contribute to a greener campus without disrupting their busy lives.
 
 ---
 
@@ -17,7 +17,7 @@ RecyClean is a real-time waste classification tool that helps users identify was
 ## 🛠️ **How We Built It**
 RecyClean integrates several technologies to deliver an intuitive and functional solution:
 
-- **Frontend:** OpenCV for capturing and displaying real-time video streams.
+- **Video Feed:** OpenCV for capturing and displaying real-time video streams.
 - **AI for Object Detection:** Google Vision API detects and labels objects in the video frames.
 - **AI for Classification:** OpenAI’s GPT-3.5-turbo model classifies detected objects into appropriate waste categories.
 - **Text-to-Speech:** Google Text-to-Speech (gTTS) converts text into speech, providing verbal instructions.
@@ -32,7 +32,6 @@ RecyClean integrates several technologies to deliver an intuitive and functional
 3. **Audio Playback:** Cross-platform audio playback had compatibility challenges, which required fallback strategies.
 4. **Error Handling:** Managing API errors and temporary file cleanup robustly.
 5. **Rate Limits:** Handling rate limit errors from the OpenAI API effectively by implementing request throttling and optimizing API calls.
-6. **API Selection:** Opted for the Google Cloud Vision API over Hugging Face’s Salesforce/blip-image-captioning-base API due to its higher accuracy and better object classification capabilities.
 
 ---
 
