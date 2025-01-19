@@ -44,5 +44,3 @@ def speak_text(text):
                 
     except Exception as e:
         print(f"Error in text-to-speech: {str(e)}")
-
-speak_text("Hello World!!")

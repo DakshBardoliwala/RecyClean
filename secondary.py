@@ -5,6 +5,7 @@ import cv2
 import openai
 import os
 import json
+from SpeakText import speak_text
 
 vision_client = vision.ImageAnnotatorClient.from_service_account_json('key.json')
 with open('config.json') as f:
@@ -30,7 +31,7 @@ def chatgpt_explain_labels(labels):
               "Recycling\nOrganic\nTrash\nElectronic\nMiscellaneous\n\n"
               "Give your response as only one word: the category.")
     
-    response = openai.Completion.create(
+    response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
             {"role": "system", "content": "You are a classification system for waste categories."},
@@ -60,7 +61,7 @@ def main():
             if labels:
                 explanation = chatgpt_explain_labels(labels)
                 print("\nChatGPT Explanation:")
-                print(explanation)
+                speak_text(explanation.split(' ')[-1])
         
         # Press 'q' to exit the loop
         if cv2.waitKey(1) & 0xFF == ord('q'):
