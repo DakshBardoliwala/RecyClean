@@ -87,16 +87,6 @@ RecyClean integrates several technologies to deliver an intuitive and functional
 
 ---
 
-## 📸 **Screenshots**
-
-![Real-Time Detection](path/to/screenshot1.png)
-_Real-time waste detection in action_
-
-![Voice Feedback](path/to/screenshot2.png)
-_Voice guidance instructing users on waste disposal_
-
----
-
 ## 📜 **License**
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
